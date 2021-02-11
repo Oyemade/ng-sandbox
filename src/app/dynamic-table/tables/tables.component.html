@@ -1,0 +1,12 @@
+<app-dynamic-table
+  [title]="'Customers'"
+  [records]="customers"
+  [settings]="customerTableSettings"
+  [buttons]="customerButtonSettings"
+></app-dynamic-table>
+
+<div style="margin-top: 3rem"></div>
+
+<!-- No settings passed and we still have nice formatting -->
+<app-dynamic-table [title]="'Transactions'" [records]="transactions">
+</app-dynamic-table>

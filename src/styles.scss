@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+$color-1st: #5e42a6;
+$color-2nd: #312450;
+
+$menu-width-desktop: 240px;
+$menu-width-tablet: 90px;
+$menu-width-smartphone: 230px;
+
+body {
+  background: $color-1st;
+  margin: 0;
+  font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+  padding-left: $menu-width-desktop;
+}

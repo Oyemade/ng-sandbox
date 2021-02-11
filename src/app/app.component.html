@@ -1,1 +1,21 @@
-<h1>NG Sandbox</h1>
+<nav class="menu" tabindex="0">
+  <div class="smartphone-menu-trigger"></div>
+  <header class="avatar">
+    <img src="" />
+    <h2>
+      Oyemade <br />
+      Oyemaja
+    </h2>
+  </header>
+  <ul>
+    <li tabindex="0">
+      <a routerLinkActive="active" [routerLink]="['dynamicTable']"
+        >Dynamic Table</a
+      >
+    </li>
+  </ul>
+</nav>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
