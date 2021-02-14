@@ -29,10 +29,17 @@ export class DynamicTableComponent implements OnInit {
 
   columnMaps: ColumnSetting[]; // Placeholder for storing table configuraion settings
 
+  buttonHeader: string; // Button <th> text
+
   constructor() {}
 
   ngOnInit(): void {
     if (!this.buttons) this.buttons = [];
+
+    // Determine buttton header text
+    this.buttons.length > 1
+      ? (this.buttonHeader = 'Actions')
+      : (this.buttonHeader = 'Action');
 
     if (this.settings) {
       // If settings are provided

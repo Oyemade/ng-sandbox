@@ -10,8 +10,7 @@
   <thead>
     <tr>
       <th *ngFor="let map of columnMaps">{{ map.header }}</th>
-      <th *ngIf="buttons.length === 1">Action</th>
-      <th *ngIf="buttons.length > 1">Actions</th>
+      <th *ngIf="buttons.length">{{ buttonHeader }}</th>
     </tr>
   </thead>
   <tbody>
@@ -23,7 +22,7 @@
       >
         {{ record[map.primaryKey] | formatCell: map.format }}
       </td>
-      <td *ngIf="buttons.length > 0">
+      <td *ngIf="buttons.length">
         <button
           *ngFor="let but of buttons"
           (click)="but.func(record[but.param])"
@@ -35,3 +34,7 @@
     </tr>
   </tbody>
 </table>
+
+<!-- 
+  Refeerence: Thomas Rundle - https://medium.com/@ct7/building-a-reusable-table-layout-for-your-angular-2-project-adf6bba3b498
+ -->

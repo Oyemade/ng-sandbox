@@ -7,7 +7,7 @@ export interface ColumnSetting {
   primaryKey: string;
   header?: string;
   format?: PipeFormat;
-  alternativeKeys?: string[];
+  // alternativeKeys?: string[];
 }
 
 export interface ButtonSettings {
