@@ -1,10 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { ButtonSettings, ColumnSetting } from '../model';
 
 @Component({
   selector: 'app-dynamic-table',
   templateUrl: './dynamic-table.component.html',
   styleUrls: ['./dynamic-table.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DynamicTableComponent implements OnInit {
   /* Here we are expecting 4 inputs: 
@@ -55,5 +61,7 @@ export class DynamicTableComponent implements OnInit {
         };
       });
     }
+
+    console.log(performance.now());
   }
 }
