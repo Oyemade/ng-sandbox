@@ -1,0 +1,47 @@
+<blockquote>Customer</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Loyal Customer</th>
+      <th>Total Spent</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cus of customers">
+      <td>{{ cus.name }}</td>
+      <td>{{ cus.email }}</td>
+      <td>{{ cus.phone }}</td>
+      <td>{{ cus.loyaltyReward ? "Yes" : "No" }}</td>
+      <td>{{ cus.totalSpent | currency: "₦ ":"code" }}</td>
+      <td><button (click)="cB(cus)">Open</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="margin-top: 3rem"></div>
+
+<blockquote>Transactions</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Amount</th>
+      <th>Customer Name</th>
+      <th>Discount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let txn of transactions">
+      <td>{{ txn.date | date: "medium" }}</td>
+      <td>{{ txn.amount | currency: "₦ ":"code" }}</td>
+      <td>{{ txn.customer }}</td>
+      <td>{{ txn.discount | percent }}</td>
+    </tr>
+  </tbody>
+</table>

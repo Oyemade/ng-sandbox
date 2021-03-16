@@ -1,4 +1,4 @@
-import { CurrencyPipe, DatePipe } from '@angular/common';
+import { CurrencyPipe, DatePipe, PercentPipe } from '@angular/common';
 import { Pipe, PipeTransform } from '@angular/core';
 import { PipeFormat } from './model';
 
@@ -14,7 +14,11 @@ import { PipeFormat } from './model';
   name: 'formatCell',
 })
 export class FormatCellPipe implements PipeTransform {
-  constructor(private currencyPipe: CurrencyPipe, private datePipe: DatePipe) {}
+  constructor(
+    private currencyPipe: CurrencyPipe,
+    private datePipe: DatePipe,
+    private percentPipe: PercentPipe
+  ) {}
 
   transform(value: any, format: PipeFormat) {
     // If the value is Undefined
@@ -46,6 +50,11 @@ export class FormatCellPipe implements PipeTransform {
     // If the format is DATE
     if (format === 2) {
       return this.datePipe.transform(value, 'medium');
+    }
+
+    // If the format is PERCENTAGE
+    if (format === 3) {
+      return this.percentPipe.transform(value);
     }
 
     return value;

@@ -8,5 +8,9 @@
 <div style="margin-top: 3rem"></div>
 
 <!-- No settings passed and we still have nice formatting :- [settings]="transactionTableSettings" -->
-<app-dynamic-table [title]="'Transactions'" [records]="transactions">
+<app-dynamic-table
+  [title]="'Transactions'"
+  [records]="transactions"
+  [settings]="transactionTableSettings"
+>
 </app-dynamic-table>

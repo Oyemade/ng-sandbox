@@ -25,7 +25,7 @@
       <td *ngIf="buttons.length">
         <button
           *ngFor="let but of buttons"
-          (click)="but.func(record[but.param])"
+          (click)="bC(record, but.func, but.params)"
           class="{{ but.class }}"
         >
           {{ but.title }}

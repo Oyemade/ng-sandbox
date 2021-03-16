@@ -16,8 +16,8 @@ export class DynamicTableComponent implements OnInit {
   /* Here we are expecting 4 inputs: 
    * title: which represents the tables title
    * records: which represents the table data 
-   * settings: which represents configuration of each cell 
-   * buttons: which represents button configurations
+   * settings: which represents configuration of each cell // Optional
+   * buttons: which represents button configurations  // Optional
    *  
    * The interface for the ColumnSetting and ButtonSettings are shown in the 
    * model.ts file. 
@@ -28,6 +28,7 @@ export class DynamicTableComponent implements OnInit {
    * configuration. 
    *
    */
+
   @Input() title: any[]; // Table Title
   @Input() records: any[]; // Table Data
   @Input() settings: ColumnSetting[]; // Table Configuration Settings
@@ -51,7 +52,7 @@ export class DynamicTableComponent implements OnInit {
       // If settings are provided
       this.columnMaps = this.settings;
     } else {
-      // If settings are not provided
+      // If settings are not provided, format headers
       this.columnMaps = Object.keys(this.records[0]).map((key) => {
         return {
           primaryKey: key,
@@ -61,7 +62,10 @@ export class DynamicTableComponent implements OnInit {
         };
       });
     }
+  }
 
-    console.log(performance.now());
+  // Action button click method
+  bC(record, func, values) {
+    func(...values.map((val) => record[val]));
   }
 }

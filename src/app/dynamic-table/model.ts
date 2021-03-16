@@ -13,14 +13,15 @@ export interface ColumnSetting {
 export interface ButtonSettings {
   title: string;
   func: any;
-  class?: string;
-  param?: string;
+  class?: string[];
+  params?: Object;
 }
 
 export enum PipeFormat {
   DEFAULT,
   CURRENCY,
   DATE,
+  PERCENTAGE,
 }
 
 export interface Customer {
