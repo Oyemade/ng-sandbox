@@ -111,9 +111,11 @@ export class TablesComponent implements OnInit {
   customerButtonSettings: ButtonSettings[] = [
     {
       title: 'Open',
-      params: ['name', 'totalSpent', 'email'],
-      func: (name, totalSpent, email) => {
-        alert(`Customer name: ${name} spent ₦${totalSpent}. Email: ${email}`);
+      params: ['name', 'totalSpent', 'email', 'phone'],
+      func: (name, totalSpent, email, phone) => {
+        alert(
+          `Customer name: ${name} spent ₦${totalSpent}. Email: ${email}. Phone: ${phone}`
+        );
       },
     },
   ];

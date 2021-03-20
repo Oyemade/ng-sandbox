@@ -18,10 +18,10 @@ export interface ButtonSettings {
 }
 
 export enum PipeFormat {
-  DEFAULT,
-  CURRENCY,
-  DATE,
-  PERCENTAGE,
+  DEFAULT, // 0
+  CURRENCY, // 1
+  DATE, // 2
+  PERCENTAGE, // 3
 }
 
 export interface Customer {
