@@ -16,6 +16,6 @@
   </ul>
 </nav>
 
-<main>
-  <router-outlet></router-outlet>
+<main [@slideInAnimation]="o.isActivated ? o.activatedRoute : ''">
+  <router-outlet #o="outlet"></router-outlet>
 </main>
