@@ -1,0 +1,12 @@
+<h3>Name: {{ data.name }}</h3>
+<h3>Email: {{ data.email }}</h3>
+<h3>Phone: {{ data.phone }}</h3>
+<h3>Total Spent: {{ data.totalSpent | currency }}</h3>
+<h3>Loyalty Status: {{ data.loyaltyReward ? "Yes" : "No" }}</h3>
+<!-- 
+  Route back to the customer list page 
+  (queryParamsHandling="preserve") :- This preserves the query params when routing
+ -->
+<button routerLink="/filterState" queryParamsHandling="preserve">
+  Go Back
+</button>

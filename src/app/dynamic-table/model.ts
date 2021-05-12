@@ -30,6 +30,7 @@ export interface Customer {
   phone: string;
   loyaltyReward: boolean;
   totalSpent: number;
+  id?: number;
 }
 
 export interface Transaction {

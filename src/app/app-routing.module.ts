@@ -15,6 +15,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'filterState',
+    loadChildren: () =>
+      import('./filter-state/filter-state.module').then(
+        (m) => m.FilterStateModule
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'dynamicTable',
   },

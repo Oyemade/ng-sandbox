@@ -1,0 +1,41 @@
+<blockquote>Customer</blockquote>
+
+<app-filter
+  [filterData]="filterStateStore"
+  (filterTransport)="acceptFilter($event)"
+></app-filter>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Loyalty Status</th>
+      <th>Amount</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cus of customers$ | async">
+      <td>
+        {{ cus.name }}
+      </td>
+      <td>
+        {{ cus.email }}
+      </td>
+      <td>
+        {{ cus.phone }}
+      </td>
+      <td>
+        {{ cus.loyaltyReward ? "Yes" : "No" }}
+      </td>
+      <td>
+        {{ cus.totalSpent | currency }}
+      </td>
+      <td>
+        <button (click)="navigate(cus)">Open</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

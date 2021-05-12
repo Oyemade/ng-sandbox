@@ -1,0 +1,29 @@
+<!-- Template driven forms -->
+<form #filterForm="ngForm">
+  <table class="table">
+    <thead>
+      <tr class="filters">
+        <th>
+          Name
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            [(ngModel)]="filterData.name"
+            (input)="sendData()"
+          />
+        </th>
+        <th>
+          Email
+          <input
+            type="text"
+            class="form-control"
+            name="email"
+            [(ngModel)]="filterData.email"
+            (input)="sendData()"
+          />
+        </th>
+      </tr>
+    </thead>
+  </table>
+</form>
