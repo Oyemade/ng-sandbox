@@ -17,7 +17,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let cus of customers$ | async">
+    <tr *ngFor="let cus of customers$ | async; trackBy: trackById">
       <td name="Name">
         {{ cus.name }}
       </td>

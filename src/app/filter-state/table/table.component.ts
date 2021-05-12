@@ -102,4 +102,8 @@ export class TableComponent implements OnInit {
       }
     );
   }
+
+  trackById(index, customer: Customer): number {
+    return customer.id;
+  }
 }
