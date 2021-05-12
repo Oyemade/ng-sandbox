@@ -80,6 +80,7 @@ main {
 @media screen and (max-width: 900px) and (min-width: 400px) {
   body {
     padding-left: $menu-width-tablet;
+    padding-left: 7rem;
   }
   .menu {
     width: $menu-width-tablet;

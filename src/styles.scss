@@ -12,3 +12,15 @@ body {
   font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
   padding-left: $menu-width-desktop;
 }
+
+@media screen and (max-width: 900px) {
+  body {
+    padding-left: 7rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    padding-left: 0;
+  }
+}
