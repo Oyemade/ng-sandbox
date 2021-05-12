@@ -4,6 +4,11 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'filterState',
+    pathMatch: 'full',
+  },
+  {
     path: 'home',
     component: HomeComponent,
   },
