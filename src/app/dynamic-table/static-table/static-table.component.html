@@ -13,12 +13,12 @@
   </thead>
   <tbody>
     <tr *ngFor="let cus of customers">
-      <td>{{ cus.name }}</td>
-      <td>{{ cus.email }}</td>
-      <td>{{ cus.phone }}</td>
-      <td>{{ cus.loyaltyReward ? "Yes" : "No" }}</td>
-      <td>{{ cus.totalSpent | currency: "₦ ":"code" }}</td>
-      <td><button (click)="cB(cus)">Open</button></td>
+      <td name="Full Name">{{ cus.email }}</td>
+      <td name="Email">{{ cus.phone }}</td>
+      <td name="Phone Number">{{ cus.name }}</td>
+      <td name="Loyal Customer">{{ cus.loyaltyReward ? "Yes" : "No" }}</td>
+      <td name="Total Spent">{{ cus.totalSpent | currency: "₦ ":"code" }}</td>
+      <td name="Action"><button (click)="cB(cus)">Open</button></td>
     </tr>
   </tbody>
 </table>
@@ -38,10 +38,10 @@
   </thead>
   <tbody>
     <tr *ngFor="let txn of transactions">
-      <td>{{ txn.date | date: "medium" }}</td>
-      <td>{{ txn.amount | currency: "₦ ":"code" }}</td>
-      <td>{{ txn.customer }}</td>
-      <td>{{ txn.discount | percent }}</td>
+      <td name="Date">{{ txn.date | date: "medium" }}</td>
+      <td name="Amount">{{ txn.amount | currency: "₦ ":"code" }}</td>
+      <td name="Customer Name">{{ txn.customer }}</td>
+      <td name="Discount">{{ txn.discount | percent }}</td>
     </tr>
   </tbody>
 </table>

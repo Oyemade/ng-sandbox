@@ -18,19 +18,19 @@
   </thead>
   <tbody>
     <tr *ngFor="let cus of customers$ | async">
-      <td>
+      <td name="Name">
         {{ cus.name }}
       </td>
-      <td>
+      <td name="Email">
         {{ cus.email }}
       </td>
-      <td>
+      <td name="Phone">
         {{ cus.phone }}
       </td>
-      <td>
+      <td name="Loyalty Status">
         {{ cus.loyaltyReward ? "Yes" : "No" }}
       </td>
-      <td>
+      <td name="Amount">
         {{ cus.totalSpent | currency }}
       </td>
       <td>

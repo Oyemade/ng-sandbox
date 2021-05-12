@@ -89,19 +89,19 @@ table {
         }
 
         &:nth-child(1):before {
-          content: "Code";
+          content: attr(name);
         }
         &:nth-child(2):before {
-          content: "Stock";
+          content: attr(name);
         }
         &:nth-child(3):before {
-          content: "Cap";
+          content: attr(name);
         }
         &:nth-child(4):before {
-          content: "Inch";
+          content: attr(name);
         }
         &:nth-child(5):before {
-          content: "Box Type";
+          content: attr(name);
         }
       }
     }

@@ -17,6 +17,7 @@
     <tr *ngFor="let record of records">
       <td
         *ngFor="let map of columnMaps"
+        [id]="map.header"
         [appStyleCell]="record[map.primaryKey]"
         [key]="map.primaryKey"
       >
