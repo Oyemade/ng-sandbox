@@ -1,9 +1,6 @@
 <blockquote>Customer</blockquote>
 
-<app-filter
-  [filterData]="filterStateStore"
-  (filterTransport)="acceptFilter($event)"
-></app-filter>
+<app-filter (filterTransport)="acceptFilter($event)"></app-filter>
 
 <table>
   <thead>

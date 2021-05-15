@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Customer } from 'src/app/dynamic-table/model';
@@ -10,13 +10,10 @@ import { Customer } from 'src/app/dynamic-table/model';
   styleUrls: ['./table.component.scss'],
 })
 export class TableComponent implements OnInit {
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(private router: Router) {}
 
   // Store latest filter values
-  filterStateStore = {
-    name: this.route.snapshot.queryParamMap.get('name') || '',
-    email: this.route.snapshot.queryParamMap.get('email') || '',
-  };
+  filterStateStore: { name: string; email: string };
 
   // Customer data
   customers: Customer[] = [
@@ -65,9 +62,7 @@ export class TableComponent implements OnInit {
   // Observable customer data
   customers$ = of(this.customers);
 
-  ngOnInit(): void {
-    this.acceptFilter(this.filterStateStore);
-  }
+  ngOnInit(): void {}
 
   // Filter observable customer data based on filter values
   acceptFilter(filters: { name: string; email: string }) {

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-filter',
@@ -6,13 +7,18 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./filter.component.scss'],
 })
 export class FilterComponent implements OnInit {
-  @Input() filterData: { name: string; email: string }; // Initial filter values if any
+  filterData: { name: string; email: string } = {
+    name: this.route.snapshot.queryParamMap.get('name') || '',
+    email: this.route.snapshot.queryParamMap.get('email') || '',
+  };
 
   @Output() filterTransport = new EventEmitter(); // Emit values to the parent component
 
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.sendData();
+  }
 
   sendData(): void {
     // Emit values to the parent component
