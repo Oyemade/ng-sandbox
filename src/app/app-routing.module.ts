@@ -5,7 +5,7 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'filterState',
+    redirectTo: 'dynamicTable',
     pathMatch: 'full',
   },
   {
