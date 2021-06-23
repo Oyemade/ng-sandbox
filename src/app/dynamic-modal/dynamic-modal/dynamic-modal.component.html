@@ -1,0 +1,35 @@
+<section id="modal" class="{{ modalType }}">
+  <!-- Modal content -->
+  <div class="modal-container">
+    <div class="modal-content">
+      <img
+        src="https://assetslogos.s3-eu-west-1.amazonaws.com/frontendassets/icons/icon__modal__cancel.svg"
+        alt="cancel"
+        class="cancel-icon"
+        (click)="cancel.emit()"
+      />
+      <h3 class="heading__3 no-margin-b">{{ header }}</h3>
+      <p class="text__regular">
+        {{ subHeader }}
+      </p>
+
+      <div class="injected-content">
+        <ng-content></ng-content>
+      </div>
+
+      <!-- Buttons -->
+      <div class="btn-group distributed" *ngIf="buttonText">
+        <button class="btn btn-secondary" (click)="cancel.emit($event)">
+          Cancel
+        </button>
+        <button
+          class="btn btn-primary"
+          [disabled]="isDisabled === 'INVALID' ? true : false"
+          (click)="submit.emit($event)"
+        >
+          {{ buttonText }}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

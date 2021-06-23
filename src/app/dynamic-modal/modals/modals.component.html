@@ -1,0 +1,15 @@
+<button (click)="showModal = !showModal">Show modal</button>
+
+<app-dynamic-modal
+  *ngIf="showModal"
+  [modalType]="modalData.modalType"
+  [header]="modalData.header"
+  [subHeader]="modalData.subHeader"
+  [buttonText]="modalData.buttonText"
+  [isDisabled]="buttonDisabled"
+  (cancel)="showModal = false"
+  (submit)="submit()"
+>
+  <h3>Injected Content</h3>
+  <p>Additional modal content goes here...</p>
+</app-dynamic-modal>

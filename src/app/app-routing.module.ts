@@ -20,6 +20,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'dynamicModal',
+    loadChildren: () =>
+      import('./dynamic-modal/dynamic-modal.module').then(
+        (m) => m.DynamicModalModule
+      ),
+  },
+  {
     path: 'filterState',
     loadChildren: () =>
       import('./filter-state/filter-state.module').then(
