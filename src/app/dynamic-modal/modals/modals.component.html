@@ -1,4 +1,12 @@
-<button (click)="showModal = !showModal">Show modal</button>
+<button (click)="showModal = true; modalData.modalType = 'right-side'">
+  Show modal (Right Side)
+</button>
+<button (click)="showModal = true; modalData.modalType = 'primary'">
+  Show modal (Primary)
+</button>
+<button (click)="showModal = true; modalData.modalType = 'confirmation'">
+  Show modal (Confirmation)
+</button>
 
 <app-dynamic-modal
   *ngIf="showModal"

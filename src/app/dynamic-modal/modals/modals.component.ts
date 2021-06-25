@@ -11,14 +11,14 @@ export class ModalsComponent implements OnInit {
 
   // Modal Properties
   modalData: ModalMetaData = {
-    modalType: 'right-side',
+    modalType: 'confirmation',
     header: 'Hello World',
     subHeader: 'Dynamic modal in action...',
     buttonText: 'Submit',
   };
 
   // Button vaildation
-  buttonDisabled: 'VALID' | 'INVALID' = 'VALID';
+  buttonDisabled: 'VALID' | 'INVALID' = 'INVALID';
   constructor() {}
 
   ngOnInit(): void {}
